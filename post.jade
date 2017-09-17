@@ -9,7 +9,8 @@ block content
 		.info
 			time(datetime= post.date.format('%Y-%m-%d'))= post.date.format('%Y.%m.%d')
 		    span= '%s阅' %(post.visits or 0)
-		    span: a(href='{{post.url}}#comments')= '%s评' %(post.comments_count or 0)
+		    span: a(href='{{post.url}}#disqus_thread')='0评'
+			//= '%s评' %(post.comments_count or 0)
 			if post.category: span
 				a(href=post.category.url)= post.category.title
 			if post.tags: span.tags
@@ -20,7 +21,7 @@ block content
 
 		.eof
 			span EOF
-
+		.donate='<p>评论框君很顽皮，需要科学上网才能看到哦！~</p><p>关注微信公众号（MarIxs）也能联系到我哦！</p><!--<p>如果你喜欢这篇文章，欢迎支付宝扫描二维码捐赠我以示鼓励。</p><img src="https://oartlm8rs.qnssl.com/zfb.jpg"></img>-->'
 		.paginator_container
 		    if posts.pre_one
 				a.pre(href=posts.previous_one.url)= posts.previous_one.title

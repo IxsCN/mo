@@ -5,18 +5,22 @@ html
 
         block title
             title= site.title
-
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="天涼好個秋.">
+        <meta property="og:description" content="解决问题，记录过程。">
+        <meta property="og:image" content="https://stray.love/_cache/thumbnails/4/397c19d1a206efbb6a60e04315e204d_240_240_true_86.png">
+        <meta property="og:url" content="https://stray.love/">
     body(style='background-image:url({{site.background_image}})')
     	.wrapper
     		aside#myNav.overlay
-    			a.closebtn(href='javascript:void(0)', onclick='closeNav()') &times;
+    			a.closebtn(href='javascript:void(0)', onclick='closeNav()') ×
     			.overlay-content
 	    			header
-		                a.logo(href='/')
+		                a.logo(href='/?status=loaded')
 		                    img(src= site.site_avatar, alt=site.title)
 		                +font('wyangkaiti')
 			                h1
-			                	a(href='/')= site.title
+			                	a(href='/?status=loaded')= site.title
 	    			nav
 	    				+site.just_nav
 	    			+site.socials
@@ -24,8 +28,8 @@ html
 
 	    	.switch
                 a.menu(href='javascript:void(0)', onclick='openNav()')
-                    span &#9776;
-                a(href='/')
+                    span ☰
+                a(href='/?status=loaded')
                     img(src= site.site_avatar, alt=site.title)
 
     		main
@@ -39,7 +43,8 @@ html
 
 
 	+h.back_to_top(label='▲')
-
+    
+    <script id="dsq-count-scr" src="//evenS.disqus.com/count.js" async></script>
     script
         // smooth scrolling
         $(function() {
