@@ -9,7 +9,7 @@ block content
 		.info
 			time(datetime= post.date.format('%Y-%m-%d'))= post.date.format('%Y.%m.%d')
 		    span= '%s阅' %(post.visits or 0)
-		    span: a(href='{{post.url}}#disqus_thread')='0评'
+		    span: a(href='{{post.url}}#disqus_thread')='0 评'
 			//= '%s评' %(post.comments_count or 0)
 			if post.category: span
 				a(href=post.category.url)= post.category.title
